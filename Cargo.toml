@@ -9,3 +9,12 @@ version = "0.1.0"
 [dependencies]
 sycamore = { git = "https://github.com/sycamore-rs/sycamore", rev = "c1787f5" }
 wee_alloc = "0.4.5"
+
+[profile.release]
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+debug = 0
+opt-level = "z"
+incremental = false
+rpath = false
